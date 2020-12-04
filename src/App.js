@@ -1,19 +1,19 @@
-import React from "react";
+import React, { useRef } from "react";
 import Header from "./components/common/Header";
 import CanvasContainer from "./containers/CanvasContainer";
 import PaletteContainer from "./containers/PaletteContainer";
 import ClientInputContainer from "./containers/ClientInputContainer";
-import CanvasTesting from "./components/canvas/CanvasTesting";
 
 const App = () => {
+  const inputRef = useRef();
+  const buttonRef = useRef();
 
   return (
     <>
       <Header />
-      <CanvasContainer />
-      <ClientInputContainer />
+      <CanvasContainer inputRef={inputRef} buttonRef={buttonRef} />
+      <ClientInputContainer inputRef={inputRef} />
       <PaletteContainer />
-      <CanvasTesting />
     </>
   );
 };

@@ -1,8 +1,9 @@
-import React from "react";
-import { useSelector } from "react-redux";
+import React, { useCallback } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { initializeText } from "../modules/input";
 import Canvas from "../components/canvas/Canvas";
 
-const CanvasContainer = () => {
+const CanvasContainer = ({ inputRef }) => {
   const {
     text,
     fontStyle,
@@ -20,6 +21,8 @@ const CanvasContainer = () => {
     canvasHex: palette.canvas.hex,
     textHex: palette.text.hex,
   }));
+  const dispatch = useDispatch();
+  const initialize = useCallback(() => dispatch(initializeText()), [dispatch]);
 
   return (
     <>
@@ -31,6 +34,8 @@ const CanvasContainer = () => {
         canvasHeight={canvasHeight}
         canvasHex={canvasHex}
         textHex={textHex}
+        inputRef={inputRef}
+        initialize={initialize}
       />
     </>
   );

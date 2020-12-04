@@ -4,7 +4,7 @@ import { changeInput } from '../modules/input';
 import { changeType } from '../modules/palette';
 import ClientInput from '../components/input/ClientInput';
 
-const ClientInputContainer = () => {
+const ClientInputContainer = ({ inputRef }) => {
     const dispatch = useDispatch();
 
     const onChangeField = useCallback(
@@ -21,6 +21,7 @@ const ClientInputContainer = () => {
             <ClientInput
                 onChangeField={onChangeField}
                 onClickType={onClickType}
+                inputRef={inputRef}
             />
         </div>
     )

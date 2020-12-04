@@ -15,7 +15,7 @@ const Spacer = styled.div`
   margin-top: 1rem;
 `;
 
-const ClientInput = ({ onChangeField, onClickType }) => {
+const ClientInput = ({ onChangeField, onClickType, inputRef }) => {
     const onChange = (e) => {
         onChangeField({ key: e.target.name, value: e.target.value });
     };
@@ -32,7 +32,7 @@ const ClientInput = ({ onChangeField, onClickType }) => {
                     <input style={{textAlign: "center"}} type="number" placeholder="200" onChange={onChange} name="canvasHeight" />
                 </span>
                 <Spacer />
-                <input style={{textAlign: "center"}} type="text" placeholder="Add text here :)" onChange={onChange} name="text" />
+                <input style={{textAlign: "center"}} type="text" placeholder="Add text here :)" onChange={onChange} name="text" ref={inputRef} />
                 <Spacer />
                 <select onChange={onChange} name="fontSize">
                     <option value={20} key={20}>Choose font-size</option>
