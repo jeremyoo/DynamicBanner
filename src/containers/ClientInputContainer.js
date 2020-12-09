@@ -1,7 +1,7 @@
 import React, { useCallback } from 'react';
 import { useDispatch } from 'react-redux';
-import { changeInput } from '../modules/input';
-import { changeType } from '../modules/palette';
+import { changeInput } from '../actions/inputActions';
+import { changeType } from '../actions/paletteActions';
 import ClientInput from '../components/input/ClientInput';
 
 const ClientInputContainer = ({ inputRef }) => {

@@ -1,20 +1,6 @@
-import { createAction, handleActions } from 'redux-actions';
+import { handleActions } from 'redux-actions';
+import { CHANGE_COLOR, CHANGE_TYPE } from '../actions/paletteActions'
 import produce from 'immer';
-
-/* action */
-const CHANGE_COLOR = "palette/CHANGE_COLOR";
-const CHANGE_TYPE = "palatte/CHANGE_TYPE";
-
-
-/* action creator */
-export const changeColor = createAction(CHANGE_COLOR, ({ type, hexColor, rgbColor }) => ({
-    type,
-    hexColor,
-    rgbColor,
-}));
-export const changeType = createAction(CHANGE_TYPE, ({ value }) => ({
-    value,
-}))
 
 /* initialstate */
 const initialState = {
@@ -39,7 +25,7 @@ const initialState = {
 
 
 /* reducer */
-const palette = handleActions(
+const paletteReducer = handleActions(
     {
         [CHANGE_COLOR]: (state, { payload: { type, hexColor, rgbColor } }) => 
             produce(state, draft => {
@@ -55,4 +41,4 @@ const palette = handleActions(
 );
 
 
-export default palette;
+export default paletteReducer;

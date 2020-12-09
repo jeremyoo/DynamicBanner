@@ -1,14 +1,14 @@
 import React, { useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux'
-import { changeColor } from '../modules/palette'
+import { changeColor } from '../actions/paletteActions'
 import Palette from '../components/palatte/Palette';
 
 const PaletteContainer = () => {
     const dispatch = useDispatch();
-    const { canvasHex, textHex, select } = useSelector(({ palette }) => ({
-        canvasHex: palette.canvas,
-        textHex: palette.text,
-        select: palette.select,
+    const { canvasHex, textHex, select } = useSelector(({ paletteReducer }) => ({
+        canvasHex: paletteReducer.canvas,
+        textHex: paletteReducer.text,
+        select: paletteReducer.select,
     }));
 
     const onChangeField = useCallback(

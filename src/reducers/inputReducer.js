@@ -1,16 +1,5 @@
-import {createAction, handleActions} from 'redux-actions';
-
-/* action */
-const CHANGE_INPUT = "input/CHANGE_INPUT";
-const INITIALIZE_TEXT = "input/INITIALIZE_TEXT";
-
-
-/* action creator */
-export const changeInput = createAction(CHANGE_INPUT, ({ key, value }) => ({
-    key,
-    value,
-}));
-export const initializeText = createAction(INITIALIZE_TEXT);
+import { handleActions } from 'redux-actions';
+import { CHANGE_INPUT, INITIALIZE_TEXT } from '../actions/inputActions'
 
 /* initial state */
 const initialState = {
@@ -22,7 +11,7 @@ const initialState = {
 };
 
 /* reducer */
-const input = handleActions(
+const inputReducer = handleActions(
     {
         [CHANGE_INPUT]: (state, { payload: { key, value }}) => ({
             ...state,
@@ -37,5 +26,4 @@ const input = handleActions(
 );
 
 
-export default input;
-
+export default inputReducer;
