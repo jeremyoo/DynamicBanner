@@ -4,33 +4,22 @@ import produce from 'immer';
 
 /* initialstate */
 const initialState = {
-    canvas: {
-        hex: "#1273de",
-        rgb: {
-            r: 18,
-            g: 115,
-            b: 222,
-        },
+    background: {
+        hex: "#14cc8f",
     },
     text: {
-        hex: "#fad0c3",
-        rgb: {
-            r: 250,
-            g: 208,
-            b: 195,
-        },
+        hex: "#303C55",
     },
-    select: "canvas",
+    select: "",
 }
 
 
 /* reducer */
 const paletteReducer = handleActions(
     {
-        [CHANGE_COLOR]: (state, { payload: { type, hexColor, rgbColor } }) => 
+        [CHANGE_COLOR]: (state, { payload: { type, hexColor } }) => 
             produce(state, draft => {
             draft[type]["hex"] = hexColor;
-            draft[type]["rgb"] = rgbColor;
         }),
         [CHANGE_TYPE]: (state, {payload: { value } }) => ({
             ...state,

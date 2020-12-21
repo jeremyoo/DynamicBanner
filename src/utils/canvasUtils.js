@@ -1,6 +1,6 @@
-export const canvasInitiate = (canvas, canvasHex, fontSize, fontStyle, textHex, text, canvasWidth, canvasHeight, textElement) => {
+export const canvasInitiate = (canvas, backgroundHex, fontSize, fontStyle, textHex, text, canvasWidth, canvasHeight, textElement) => {
     const ctx = canvas.getContext("2d");
-    ctx.fillStyle = `${canvasHex}`
+    ctx.fillStyle = `${backgroundHex}`
     ctx.fillRect(0, 0, canvas.width, canvas.height);
     const textCtx = canvas.getContext("2d");
     textCtx.textAlign = "center";
@@ -50,7 +50,7 @@ export const canvasMousedown = (canvas, textElement) => {
       });
     };
 
-export const canvasMousemove = (canvas, canvasHex, fontSize, fontStyle, textHex, text, canvasWidth, canvasHeight, textElement) => {
+export const canvasMousemove = (canvas, backgroundHex, fontSize, fontStyle, textHex, text, canvasWidth, canvasHeight, textElement) => {
     const ctx = canvas.getContext("2d");
     const textCtx = canvas.getContext("2d");
     canvas.addEventListener("mousemove", (e) => {
@@ -65,7 +65,7 @@ export const canvasMousemove = (canvas, canvasHex, fontSize, fontStyle, textHex,
               }
               if (element.isDrag) {
                 reDraw = true;
-                ctx.fillStyle = `${canvasHex}`;
+                ctx.fillStyle = `${backgroundHex}`;
                 ctx.fillRect(0, 0, canvas.width, canvas.height);
                 textCtx.font = `${element.textHeight}px ${element.textStyle}`;
                 textCtx.fillStyle = `${element.color}`;

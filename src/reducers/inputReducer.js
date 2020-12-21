@@ -3,11 +3,11 @@ import { CHANGE_INPUT, INITIALIZE_TEXT } from '../actions/inputActions'
 
 /* initial state */
 const initialState = {
-    text: "text here :)",
+    text: "hello :)",
     fontStyle: "normal",
-    fontSize: 20,
-    canvasWidth: "300",
-    canvasHeight: "200",
+    fontSize: 36,
+    canvasWidth: "600",
+    canvasHeight: "350",
 };
 
 /* reducer */

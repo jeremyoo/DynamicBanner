@@ -1,7 +1,7 @@
 import React, { useCallback } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { initializeText } from "../actions/inputActions";
-import Canvas from "../components/canvas/Canvas";
+import Canvas from "../components/canvas";
 
 const CanvasContainer = ({ inputRef }) => {
   const {
@@ -10,7 +10,7 @@ const CanvasContainer = ({ inputRef }) => {
     fontSize,
     canvasWidth,
     canvasHeight,
-    canvasHex,
+    backgroundHex,
     textHex,
   } = useSelector(({ inputReducer, paletteReducer }) => ({
     text: inputReducer.text,
@@ -18,7 +18,7 @@ const CanvasContainer = ({ inputRef }) => {
     fontSize: inputReducer.fontSize,
     canvasWidth: inputReducer.canvasWidth,
     canvasHeight: inputReducer.canvasHeight,
-    canvasHex: paletteReducer.canvas.hex,
+    backgroundHex: paletteReducer.background.hex,
     textHex: paletteReducer.text.hex,
   }));
   const dispatch = useDispatch();
@@ -32,7 +32,7 @@ const CanvasContainer = ({ inputRef }) => {
         fontSize={fontSize}
         canvasWidth={canvasWidth}
         canvasHeight={canvasHeight}
-        canvasHex={canvasHex}
+        backgroundHex={backgroundHex}
         textHex={textHex}
         inputRef={inputRef}
         initialize={initialize}

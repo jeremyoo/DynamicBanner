@@ -1,27 +1,32 @@
 import React, { useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux'
-import { changeColor } from '../actions/paletteActions'
-import Palette from '../components/palette';
+import { changeColor, changeType } from '../actions/paletteActions'
+import PaletteIcon from '../components/paletteIcon';
 
-const PaletteContainer = () => {
+const PaletteIconContainer = () => {
     const dispatch = useDispatch();
     const { backgroundHex, textHex, select } = useSelector(({ paletteReducer }) => ({
-        backgroundHex: paletteReducer.background,
-        textHex: paletteReducer.text,
+        backgroundHex: paletteReducer.background.hex,
+        textHex: paletteReducer.text.hex,
         select: paletteReducer.select,
     }));
 
     const onChangeField = useCallback(
         (payload) => dispatch(changeColor(payload)),
         [dispatch]
-    );  
+    );
+    const onClickType = useCallback(
+        (payload) => dispatch(changeType(payload)),
+        [dispatch]
+    );
 
     return (
         <>
-            <Palette
+            <PaletteIcon
                 backgroundHex={backgroundHex}
                 textHex={textHex}
                 onChangeField={onChangeField}
+                onClickType={onClickType}
                 select={select}
             />
 
@@ -29,4 +34,4 @@ const PaletteContainer = () => {
     )
 }
 
-export default PaletteContainer;
+export default PaletteIconContainer;
