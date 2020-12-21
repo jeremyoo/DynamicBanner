@@ -2,11 +2,7 @@ import React, { useRef } from "react";
 import styled from 'styled-components';
 import Layout from "./components/layout";
 import CanvasContainer from "./containers/CanvasContainer";
-// import PaletteContainer from "./containers/PaletteContainer";
-// import SizeInputContainer from "./containers/SizeInputContainer";
-// import TextInputContainer from "./containers/TextInputContainer";
-// import FontInputContainer from "./containers/FontInputContainer";
-// import TypeInputContainer from "./containers/TypeInputContainer";
+
 
 const StyledMainContainer = styled.main``;
 
@@ -25,11 +21,6 @@ const App = () => {
       <StyledMainContainer>
         <StyledSectionContainer>
             <CanvasContainer inputRef={inputRef} buttonRef={buttonRef} />
-              {/* <TextInputContainer inputRef={inputRef} />
-              <SizeInputContainer />
-              <FontInputContainer />
-              <TypeInputContainer />
-              <PaletteContainer /> */}
         </StyledSectionContainer>
       </StyledMainContainer>
     </Layout>

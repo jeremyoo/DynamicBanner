@@ -92,15 +92,15 @@ const GlobalStyle = createGlobalStyle`
 
     section {
     margin: 0 auto;
-    padding: 100px 0;
+    padding: 100px 0 0;
     max-width: 1000px;
     min-height: 100vh;
     
       @media (max-width: 768px) {
-        padding: 80px 0;
+        padding: 80px 0 0;
       }
       @media (max-width: 480px) {
-        padding: 60px 0;
+        padding: 60px 0 0;
       }
     }
   }

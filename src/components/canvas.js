@@ -3,16 +3,15 @@ import AddBtn from "./addBtn";
 import { addText } from '../utils/addTextUtils';
 import { canvasInitiate, canvasMousedown, canvasMousemove, canvasMouseup } from '../utils/canvasUtils';
 import styled from "styled-components";
-// import PaletteContainer from "../containers/PaletteContainer";
 import SizeInputContainer from "../containers/SizeInputContainer";
 import TextInputContainer from "../containers/TextInputContainer";
 import FontInputContainer from "../containers/FontInputContainer";
-// import TypeInputContainer from "../containers/TypeInputContainer";
 import PaletteIconContainer from "../containers/PaletteIconContainer";
 
 const CanvasBlock = styled.div`
   ${({ theme }) => theme.mixins.flexCenter};
   flex-direction: column;
+  margin-bottom: 60px;
 `;
 
 const Canvas = ({

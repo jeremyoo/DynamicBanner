@@ -2,7 +2,7 @@ import React, { useState, useRef } from 'react';
 import MyColorPalette from './myColorPalette';
 import { useOnClickOutside } from '../hooks'
 import styled, { css } from 'styled-components';
-import { IoImageOutline, IoImageSharp, IoText } from "react-icons/io5";
+import { IoColorFill, IoColorFillOutline, IoText } from "react-icons/io5";
 
 const PaletteIconBlock = styled.div`
     ${({theme}) => theme.mixins.flexCenter};
@@ -79,10 +79,10 @@ const palette = () => {
         visibility: visible;
         pointer-events: all;`}
 `};
-const SelectedBackIcon = styled(IoImageSharp)`
+const SelectedBackIcon = styled(IoColorFill)`
     pointer-events: none;
 `;
-const UnselectedBackIcon = styled(IoImageOutline)`
+const UnselectedBackIcon = styled(IoColorFillOutline)`
     pointer-events: none;
 `;
 const SelectedTextIcon =  styled(IoText)`
