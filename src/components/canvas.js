@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import AddBtn from "./addBtn";
 import { addText } from '../utils/addTextUtils';
-import { canvasInitiate, canvasMousedown, canvasMousemove, canvasMouseup } from '../utils/canvasUtils';
+import { canvasInitiate, canvasMousedown, canvasMousemove, canvasMouseup, canvasTouchstart, canvasTouchmove, canvasTouchend } from '../utils/canvasUtils';
 import styled from "styled-components";
 import SizeInputContainer from "../containers/SizeInputContainer";
 import TextInputContainer from "../containers/TextInputContainer";
@@ -41,6 +41,10 @@ const Canvas = ({
     canvasMousemove(canvas, backgroundHex, fontSize, fontStyle, textHex, text, canvasWidth, canvasHeight, textElement);
     canvasMousedown(canvas, textElement);
     canvasMouseup(canvas, textElement);
+    canvasTouchmove(canvas, backgroundHex, fontSize, fontStyle, textHex, text, canvasWidth, canvasHeight, textElement);
+    canvasTouchstart(canvas, textElement);
+    canvasTouchend(canvas, textElement);
+
   }, [text, textHex, fontSize, fontStyle, backgroundHex, canvasWidth, canvasHeight, textElement]);
 
   return (

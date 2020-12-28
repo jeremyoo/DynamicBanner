@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import styled, { css } from 'styled-components';
 import { useOnClickOutside } from '../hooks'
-import { fontSize, fontStyle } from '../lib/text/text.js';
+import { fontSize, fontStyle } from '../utils/fontUtils';
 
 const StyledBlock = styled.div`
     ${({ theme }) => theme.mixins.flexCenter};

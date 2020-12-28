@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
 import styled from "styled-components";
 import { CustomPicker } from "react-color";
 const tinycolor = require("tinycolor2");
@@ -35,16 +35,24 @@ const MyColorPalette = ({
   onChangeField,
   select,
 }) => {
-  
   const onChange = (color) => {
     const hexColor = tinycolor(color).toHex();
-    onChangeField({ type: select, hexColor: `#${hexColor}` })
+    onChangeField({ type: select, hexColor: `#${hexColor}`})
   };
+
+  // prevent content scrolling while changing color
+  const blockRef = useRef();
+  useEffect(() => {
+    const block = blockRef.current
+    block.addEventListener("touchmove", (e) => {
+      e.preventDefault();
+    })
+  })
 
   return (
     <>
-      <PickerBlock>
-      <div style={{ height: 150, width: 200, position: 'relative' }}>
+      <PickerBlock ref={blockRef}>
+      <div style={{ height: 150, width: 200, position: 'relative' }} >
         <Saturation
           hsl={hsl}
           hsv={hsv}
@@ -52,7 +60,7 @@ const MyColorPalette = ({
           onChange={onChange}
         />
       </div>
-      <div style={{ height: 15, width: 200, position: 'relative' }}>
+      <div style={{ height: 15, width: 200, position: 'relative' }} >
        <Hue
           hsl={hsl}
           pointer={CustomSlider}

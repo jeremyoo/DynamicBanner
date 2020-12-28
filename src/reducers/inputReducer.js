@@ -7,7 +7,7 @@ const initialState = {
     fontStyle: "normal",
     fontSize: 36,
     canvasWidth: "600",
-    canvasHeight: "350",
+    canvasHeight: "360",
 };
 
 /* reducer */

@@ -1,16 +1,16 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 
 const StyledBlock = styled.div`
-    ${({ theme }) => theme.mixins.epicSides};
     ${({ theme }) => theme.mixins.flexCenter};
     height: 100px;
+    margin-top: 20px;
     background: inherit;
 
     span {
         position: relative;
         display: inline-block;
-        margin: 30px 10px;
+        margin: 30px 10px 30px;
     }
 
     input {
@@ -78,20 +78,36 @@ const StyledBlock = styled.div`
     }
 `;
 
+const SizeInput = ({ onChangeField, width, height }) => {
+    const [deviceWidth, setDeviceWidth] = useState(width);
+    const [valueChange, setValueChange] = useState(false);
 
-const SizeInput = ({ onChangeField }) => {
+    useEffect(() => {
+        const currentWidth = window.innerWidth;
+        setDeviceWidth(currentWidth);
+        if (deviceWidth <= width) {
+            onChangeField({ key: "canvasWidth", value: `${deviceWidth}` });
+            onChangeField({ key: "canvasHeight", value: `${deviceWidth}`*0.6 });
+        };
+    }, [width, deviceWidth, onChangeField, ])
+
     const onChange = (e) => {
-        onChangeField({ key: e.target.name, value: e.target.value });
+        setValueChange(true);
+        const value = e.target.value;
+        const name = e.target.name;
+        value < deviceWidth ?
+        onChangeField({ key: name, value: value }) :
+        onChangeField({ key: name, value: deviceWidth });
     };
 
     return (
         <StyledBlock>
             <span>
-                <input id="width" type="number" placeholder="300 px" onChange={onChange} name="canvasWidth"/>
+                <input id="width" type="number" value={valueChange ? width : ""}  max={deviceWidth} placeholder={width} onChange={onChange} name="canvasWidth"/>
                 <label for="width">width</label>
             </span>
             <span>
-                <input id="height" type="number" placeholder="200 px" onChange={onChange} name="canvasHeight"/>
+                <input id="height" type="number" placeholder={height} onChange={onChange} name="canvasHeight"/>
                 <label for="height">height</label>
             </span>
         </StyledBlock>

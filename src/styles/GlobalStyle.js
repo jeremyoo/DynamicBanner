@@ -25,6 +25,7 @@ const GlobalStyle = createGlobalStyle`
     --ft-lg: 1.125rem;
     --ft-xl: 1.25rem;
     --ft-xxl: 1.5rem;
+    --ft-sm-heading: 1.75rem;
     --ft-heading: 2rem;
 
     --border-radius: 0.25rem;
@@ -35,13 +36,14 @@ const GlobalStyle = createGlobalStyle`
 
   html {
     box-sizing: border-box;
-    width: 100%;
+    overflow-x: hidden;
+    width: 100vw;
   }
 
   *,
   *:before,
   *:after {
-    box-sizing: border-box;
+    box-sizing: inherit;
   }
 
   ::selection {
@@ -53,12 +55,10 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     width: 100%;
     min-height: 100%;
-    overflow-x: hidden;
     background-color: var(--navy);
     color: var(--steel);
     font-family: sans-serif;
     font-size: var(--ft-xl);
-    vertical-align: middle;
     line-height: 1.3;
 
     @media (max-width: 480px) {
@@ -89,12 +89,12 @@ const GlobalStyle = createGlobalStyle`
     @media (max-width: 480px) {
       padding: 0px 25px;
     }
+  }
 
-    section {
+  section {
     margin: 0 auto;
     padding: 100px 0 0;
     max-width: 1000px;
-    min-height: 100vh;
     
       @media (max-width: 768px) {
         padding: 80px 0 0;
@@ -103,7 +103,6 @@ const GlobalStyle = createGlobalStyle`
         padding: 60px 0 0;
       }
     }
-  }
 
   a {
     display: inline-block;
