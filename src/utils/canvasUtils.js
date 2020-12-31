@@ -109,9 +109,8 @@ export const canvasMouseup = (canvas, textElement) => {
 
 export const canvasTouchstart = (canvas, textElement) => {
   canvas.addEventListener("touchstart", (e) => {
-    e.preventDefault()
-    const xx = e.touches[0].clientX;
-    const yy = e.touches[0].clientY - e.target.offsetTop;
+    const xx = e.touches[0].pageX;
+    const yy = e.touches[0].pageY - e.target.offsetTop;
     let overlap = 0;
     if (textElement[textElement.length - 1]) {
       textElement.forEach((element) => {
@@ -143,8 +142,8 @@ export const canvasTouchmove = (canvas, backgroundHex, fontSize, fontStyle, text
   const textCtx = canvas.getContext("2d");
   canvas.addEventListener("touchmove", (e) => {
     e.preventDefault()
-    const xx = e.touches[0].clientX;
-    const yy = e.touches[0].clientY - e.target.offsetTop;
+    const xx = e.touches[0].pageX;
+    const yy = e.touches[0].pageY - e.target.offsetTop;
     let noDrag = [];
     let reDraw = false;
     if (textElement[textElement.length - 1]) {
@@ -181,10 +180,8 @@ export const canvasTouchmove = (canvas, backgroundHex, fontSize, fontStyle, text
 
 export const canvasTouchend = (canvas, textElement) => {
   canvas.addEventListener("touchend", (e) => {
-    e.preventDefault()
-    const xx = e.changedTouches[0].clientX;
-    const yy = e.changedTouches[0].clientY - e.target.offsetTop;;
-    console.log(xx, yy);
+    const xx = e.changedTouches[0].pageX;
+    const yy = e.changedTouches[0].pageY - e.target.offsetTop;;
     if (textElement[textElement.length - 1]) {
       textElement.forEach((element) => {
         if (element.isDrag) {

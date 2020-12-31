@@ -13,6 +13,12 @@ const Select = styled.div`
     position: relative;
     margin: 10px 10px;
     width: 180px;
+    @media (max-width: 414px) {
+        width: 160px;
+    }
+    @media (max-width: 320px) {
+        width: 140px;
+    }
 `;
 
 const SelectTrigger = styled.div`
@@ -34,6 +40,9 @@ const SelectTrigger = styled.div`
         font-size: var(--ft-sm);
         text-shadow: var(--teal) 1px 1px;
         background-color: var(--bright-white);
+        @media (max-width: 320px) {
+        font-size: var(--ft-xs);
+        }
     }
     ${props => props.open && css`
         cursor: pointer;
@@ -44,6 +53,9 @@ const SelectTrigger = styled.div`
         border-bottom-left-radius: 4px;
         border-bottom-right-radius: 4px;
     `}
+    @media (max-width: 320px) {
+        font-size: var(--ft-xs);
+    }
 `;
 
 const Options = styled.div`
@@ -54,8 +66,9 @@ const Options = styled.div`
     left: 0;
     right: 0;
     overflow: auto;
+    overflow-x: hidden;
     ::-webkit-scrollbar {
-        background: var(--light-steel);
+        background-color: var(--light-steel);
         border-top-right-radius: 4px;
         width: 12px;
     }
@@ -65,6 +78,7 @@ const Options = styled.div`
         border: 1px solid var(--light-navy);
     }
     border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
     transition: var(--transition);
     opacity: 0;
     visibility: hidden;
@@ -81,6 +95,7 @@ const Option = styled.span`
     display: block;
     position: relative;
     padding: 8px 20px;
+    width: 180px;
     background: var(--white);
     color: var(--steal);
     font-size: var(--ft-sm);
@@ -94,6 +109,9 @@ const Option = styled.span`
         text-shadow: var(--teal) 1px 1px;
         font-weight: 600;
         background-color: var(--bright-white);
+    }
+    @media (max-width: 320px) {
+        font-size: var(--ft-xs);
     }
 `;
 
@@ -130,7 +148,6 @@ const Arrow = styled.div`
     `}
 `;
 
-
 const FontInput = ({ onChangeField }) => {
     const [openSize, setOpenSize] = useState(false);
     const [openStyle, setOpenStyle] = useState(false);
@@ -146,8 +163,6 @@ const FontInput = ({ onChangeField }) => {
     const onClickSizeValue = (e) => {
         const type = e.target.dataset.type;
         const value = e.target.dataset.value;
-        console.log(e.target.dataset.type, e.target.dataset.value);
-        console.log(type, value);
         setSizeValue(value);
         onChangeField({ key: type, value: value });
     }
@@ -172,7 +187,9 @@ const FontInput = ({ onChangeField }) => {
                 <SelectTrigger open={openSize}><span name="fontSize">{sizeValue}</span>
                     <Arrow open={openSize}></Arrow>
                 </SelectTrigger>
-                <Options open={openSize}>
+                <Options
+                    open={openSize}
+                >
                     {fontSize.map((size) => <Option data-value={size} data-type="fontSize" onClick={onClickSizeValue}>{size}</Option>)}
                 </Options>
             </Select>

@@ -57,6 +57,22 @@ const StyledBlock = styled.div`
                 transition: var(--transition);
             }
         }
+        @media (max-width: 414px) {
+            width: 160px;
+            text-indent: 70px;
+        }
+        @media (max-width: 320px) {
+            width: 140px;
+            text-indent: 60px;
+        }
+    }
+    @media (max-width: 414px) {
+        height: 90px;
+        margin-top: 15px;
+    }
+    @media (max-width: 320px) {
+        height: 85px;
+        margin-top: 10px;
     }
     input:focus,
     input:active,

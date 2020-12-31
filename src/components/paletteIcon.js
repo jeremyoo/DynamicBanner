@@ -12,6 +12,12 @@ const PaletteIconBlock = styled.div`
 const IconBlock = styled.div`
     position: relative;
     margin: 40px 10px 15px;
+    @media (max-width: 414px) {
+        margin: 25px 10px 15px;
+    }
+    @media (max-width: 320px) {
+        margin: 22.5px 10px 15px;
+    }
 `;
 
 const buttons = () => {
@@ -93,8 +99,6 @@ const UnelectedTextIcon = styled(IoText)`
     pointer-events: none;
     color: var(--dark-navy);
 `; 
-
-
 
 const BackPalette = palette();
 const TextPalette = palette();

@@ -8,6 +8,12 @@ const AddBtnBlock = styled.div`
   align-items: center;
   position: relative;
   margin-top: 25px;
+  @media (max-width: 414px) {
+    margin-top: 20px;
+  }
+  @media (max-width: 320px) {
+    margin-top: 15px;
+  }
 
   button {
     position: relative;
