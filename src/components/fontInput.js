@@ -5,13 +5,14 @@ import { fontSize, fontStyle } from '../utils/fontUtils';
 
 const StyledBlock = styled.div`
     ${({ theme }) => theme.mixins.flexCenter};
+    flex-direction: column;
     position: relative;
     width: 100%;
 `;
 
 const Select = styled.div`
     position: relative;
-    margin: 10px 10px;
+    margin: 5px 10px;
     width: 180px;
     @media (max-width: 414px) {
         width: 160px;

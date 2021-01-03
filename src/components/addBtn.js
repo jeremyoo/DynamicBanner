@@ -7,18 +7,12 @@ const AddBtnBlock = styled.div`
   justify-content: center;
   align-items: center;
   position: relative;
-  margin-top: 25px;
-  @media (max-width: 414px) {
-    margin-top: 20px;
-  }
-  @media (max-width: 320px) {
-    margin-top: 15px;
-  }
+  margin: 10px;
 
   button {
     position: relative;
-    width: 140px;
-    height: 45px;
+    width: 120px;
+    height: 90px;
     padding: 10px 15px;
     background: var(--dark-teal);
     color: var(--bright-white);
@@ -44,7 +38,7 @@ const AddBtn = ({ onClick }) => {
   return (
     <>
       <AddBtnBlock>
-        <button onClick={onClick}>ADD</button>
+        <button onClick={onClick}>ADD<br></br>Text</button>
       </AddBtnBlock>
     </>
   );

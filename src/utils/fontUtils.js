@@ -3,7 +3,6 @@ export const fontStyle = [
   "Arial",
   "Courier",
   "Cursive",
-  "Fantasy",
   "Georgia",
   "Helvetica",
   "Monospace",
