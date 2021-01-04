@@ -14,7 +14,7 @@ const AddBtnBlock = styled.div`
     width: 120px;
     height: 90px;
     padding: 10px 15px;
-    background: var(--dark-teal);
+    background: var(--darkest-teal);
     color: var(--bright-white);
     font-size: var(--ft-lg);
     font-weight: 600;
@@ -26,7 +26,6 @@ const AddBtnBlock = styled.div`
     &:hover,
     &:focus,
     &:active {
-      font-size: var(--ft-xl);
       text-shadow: var(--lightestest-navy) 2px 2px;
       background: var(--teal);
       transition: var(--transition);

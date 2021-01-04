@@ -1,5 +1,5 @@
 import { handleActions } from 'redux-actions';
-import { CHANGE_COLOR, CHANGE_TYPE } from '../actions/paletteActions'
+import { CHANGE_COLOR, CHANGE_TYPE, RESET_COLOR } from '../actions/paletteActions'
 import produce from 'immer';
 
 /* initialstate */
@@ -24,6 +24,16 @@ const paletteReducer = handleActions(
         [CHANGE_TYPE]: (state, {payload: { value } }) => ({
             ...state,
             select: value,
+        }),
+        [RESET_COLOR]: (state) => ({
+            ...state,
+            background: {
+                hex: "#14cc8f",
+            },
+            text: {
+                hex: "#303C55",
+            },
+            select: "",
         })
     },
     initialState,

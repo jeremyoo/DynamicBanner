@@ -1,5 +1,5 @@
 import { handleActions } from 'redux-actions';
-import { CHANGE_INPUT, INITIALIZE_TEXT } from '../actions/inputActions'
+import { CHANGE_INPUT, INITIALIZE_TEXT, RESET_INPUT} from '../actions/inputActions'
 
 /* initial state */
 const initialState = {
@@ -21,6 +21,14 @@ const inputReducer = handleActions(
             ...state,
             text: '',
         }),
+        [RESET_INPUT]: (state) => ({
+            ...state,
+            text: "hello :)",
+            fontStyle: "normal",
+            fontSize: 36,
+            canvasWidth: "600",
+            canvasHeight: "360",
+        })
     },
     initialState,
 );

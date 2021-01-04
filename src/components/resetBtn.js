@@ -1,7 +1,7 @@
 import React from "react";
 import styled, { css } from "styled-components";
 
-const DownloadBtnBlock = styled.div`
+const ResetBtnBlock = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -16,33 +16,33 @@ const DownloadBtnBlock = styled.div`
     position: relative;
     height: 40px;
     padding: 10px 15px;
-    background: var(--darkest-bluish);
+    background: var(--darkest-reddish);
     color: var(--bright-white);
     font-size: var(--ft-sm);
     font-weight: 600;
     text-transform: uppercase;
     border: 0;
-    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
     cursor: pointer;
     transition: var(--transition);
     &:hover,
     &:focus,
     &:active {
       text-shadow: var(--lightestest-navy) 2px 2px;
-      background: var(--bluish);
+      background: var(--reddish);
       transition: var(--transition);
     }
   }
 `;
 
-const DownloadButton = ({ textElement, canvasWidth, onClick }) => {
+const ResetButton = ({ textElement, canvasWidth, onClick }) => {
   return (
     <>
-      <DownloadBtnBlock textElement={textElement}>
-        <button style={{width: parseInt(canvasWidth/2)}} onClick={onClick}>DOWNLOAD THIS BANNER</button>
-      </DownloadBtnBlock>
+      <ResetBtnBlock textElement={textElement}>
+        <button style={{width: parseInt(canvasWidth/2)}} onClick={onClick}>RESET BANNER</button>
+      </ResetBtnBlock>
     </>
   );
 };
 
-export default DownloadButton;
+export default ResetButton;

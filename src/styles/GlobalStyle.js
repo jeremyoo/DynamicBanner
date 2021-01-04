@@ -18,6 +18,12 @@ const GlobalStyle = createGlobalStyle`
     --dark-teal: #14cc8f;
     --darkest-teal: #12a171;
     --teal-tint: rgba(100, 250, 200, 0.1);
+    --reddish: #fa6464;
+    --dark-reddish: #d65858;
+    --darkest-reddish: #aa4545;
+    --bluish: #647afa;
+    --dark-bluish: #5669d6;
+    --darkest-bluish: #4756ad;
 
     --ft-xs: 0.75rem;
     --ft-sm: 0.875rem;

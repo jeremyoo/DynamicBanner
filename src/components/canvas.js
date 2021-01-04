@@ -8,6 +8,7 @@ import TextInputContainer from "../containers/TextInputContainer";
 import FontInputContainer from "../containers/FontInputContainer";
 import PaletteIconContainer from "../containers/PaletteIconContainer";
 import DownloadButton from "./downloadBtn";
+import ResetButton from "./resetBtn";
 
 const CanvasBlock = styled.div`
   ${({ theme }) => theme.mixins.flexCenter};
@@ -15,6 +16,9 @@ const CanvasBlock = styled.div`
   margin-bottom: 60px;
 
   .font_addbtn_div {
+    ${({ theme }) => theme.mixins.flexCenter};
+  }
+  .reset_downlaod_div {
     ${({ theme }) => theme.mixins.flexCenter};
   }
 `;
@@ -29,6 +33,8 @@ const Canvas = ({
   textHex,
   inputRef,
   initialize,
+  resetI,
+  resetC,
 }) => {
   const [textElement, setTextElement] = useState([]);
   const canvasRef = useRef();
@@ -42,7 +48,6 @@ const Canvas = ({
     canvasTouchmove(canvas, backgroundHex, fontSize, fontStyle, textHex, text, canvasWidth, canvasHeight, textElement);
     canvasTouchstart(canvas, textElement);
     canvasTouchend(canvas, textElement);
-
   }, [text, textHex, fontSize, fontStyle, backgroundHex, canvasWidth, canvasHeight, textElement]);
 
   const onClickAddText = () => {
@@ -64,12 +69,21 @@ const Canvas = ({
     aTag.click();
   }
 
+  const onClickReset = () => {
+    resetI();
+    resetC();
+    setTextElement([]);
+  }
+
   return (
     <>
       <CanvasBlock>
         <SizeInputContainer />
         <canvas ref={canvasRef} width={canvasWidth} height={canvasHeight} />
-        <DownloadButton textElement={textElement} canvasWidth={canvasWidth} onClick={onClickDonwload} />
+        <div class="reset_downlaod_div">
+          <ResetButton textElement={textElement} canvasWidth={canvasWidth} onClick={onClickReset} />
+          <DownloadButton textElement={textElement} canvasWidth={canvasWidth} onClick={onClickDonwload} />
+        </div>
         <PaletteIconContainer />
         <TextInputContainer inputRef={inputRef} />
         <div class="font_addbtn_div">
