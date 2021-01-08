@@ -70,9 +70,9 @@ const Canvas = ({
   }
 
   const onClickReset = () => {
+    setTextElement([]);
     resetI();
     resetC();
-    setTextElement([]);
   }
 
   return (

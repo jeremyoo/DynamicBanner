@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import styled, { css } from "styled-components";
 import { FaPaintBrush } from "react-icons/fa";
 import { useOnClickOutside } from "../hooks"
@@ -45,6 +45,7 @@ const StyledNav = styled.nav`
       }
       span {
         padding: 0 15px;
+        text-transform: uppercase;
       }
       @media (max-width: 768px) {
         font-size: var(--ft-xxl);
@@ -85,6 +86,7 @@ const StyledLinks = styled.div`
     li {
       cursor: pointer;
       font-size: var(--ft-sm);
+      text-transform: uppercase;
       padding: 10px 15px;
     }
   }
@@ -109,7 +111,7 @@ const MenuButton = styled.div`
     width: 30px;
     height: 30px;
   }
-  ${props => props.menuOpen && css`
+  ${props => props.btnOpen && css`
     display: none;
   `}
 `;
@@ -119,6 +121,7 @@ const Hamburger = styled.div`
   height: 2px;
   border-radius: 3px;
   background: var(--teal);
+  pointer-events: none;
   &::before,
   &::after {
     content: '';
@@ -150,11 +153,32 @@ const Hamburger = styled.div`
 
 const Nav = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const onClickLink = () => {
+  const [btnOpen, setBtnOpen] = useState(false);
+  const [btnClose, setBtnClose] = useState(false);
+  const [menuTarget, setMenuTarget] = useState("");
+
+  const onClickMenu = (e) => {
     setMenuOpen(!menuOpen);
+    if (e.target.className) setMenuTarget(e.target.className);
   };
+
+  const onClickClose = () => {
+    setMenuOpen(!menuOpen);
+    setMenuTarget("");
+  }
+
+  useEffect(() => {
+    if (menuOpen) setTimeout(() => {setBtnOpen(true);}, 250); 
+    if (menuOpen) setTimeout(() => {setBtnClose(true);}, 250); 
+  }, [menuOpen]);
+
   const menuRef = useRef();
-  useOnClickOutside(menuRef, () => setMenuOpen(false));
+  useOnClickOutside(menuRef, () => {
+    setMenuOpen(false);
+    setBtnOpen(false);
+    setBtnClose(false);
+    setTimeout(() => {setMenuTarget("");}, 250) 
+  });
 
   return (
     <>
@@ -163,22 +187,29 @@ const Nav = () => {
           <div className="logo">
             <a href="/">
               <FaPaintBrush className="brushIcon" size="35px" />
-              <span>DYMANIC BANNER</span>
+              <span>dynamic banner</span>
             </a>
           </div>
           <StyledLinks>
             <ul>
-              <li name="about" onClick={onClickLink} >ABOUT</li>
-              <li name="example" onClick={onClickLink} >EXAMPLE</li>
-              <li name="contact" onClick={onClickLink} >CONTACT</li>
+              <li className="about" onClick={onClickMenu} >about</li>
+              <li className="instructions" onClick={onClickMenu} >instructions</li>
+              <li className="contact" onClick={onClickMenu} >contact</li>
             </ul>
           </StyledLinks>
-          <MenuButton menuOpen={menuOpen} onClick={onClickLink}>
+          <MenuButton btnOpen={btnOpen} onClick={onClickMenu}>
             <Hamburger />
           </MenuButton>
         </StyledNav>
       </StyledNavBlock>
-      <Menu menuOpen={menuOpen} menuRef={menuRef} onClickLink={onClickLink} MenuButton={MenuButton} />
+      <Menu
+        menuOpen={menuOpen}
+        btnOpen={btnOpen}
+        btnClose={btnClose}
+        menuRef={menuRef}
+        menuTarget={menuTarget}
+        onClickClose={onClickClose}
+      />
     </>
   );
 };

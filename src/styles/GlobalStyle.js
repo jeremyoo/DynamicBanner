@@ -38,6 +38,8 @@ const GlobalStyle = createGlobalStyle`
 
     --easing: cubic-bezier(0.65, 0, 0.35, 1);
     --transition: all 0.25s cubic-bezier(0.65, 0, 0.35, 1);
+    --transition-long: all 0.25s cubic-bezier(0.65, 0, 0.35, 1);
+
   }
 
   html {
