@@ -219,7 +219,7 @@ const Nav = () => {
       <StyledNavBlock>
         <StyledNav>
           <div className="logo">
-            <a href="/">
+            <a href="/DynamicBanner">
               <FaPaintBrush className="brushIcon" size="35px" />
               <span>Dynamic Banner</span>
             </a>
