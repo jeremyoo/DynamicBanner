@@ -378,11 +378,10 @@ const Menu = ({ menuOpen, btnClose, menuRef, menuTarget, onClickClose }) => {
                 <AboutBlock menuTarget={menuTarget} openAbout={openAbout}>
                     <span className="about" onClick={onClickContent}>about</span>
                     <div className="aboutContent">
-                        Dynamic Banner helps you to create awsome banners quickly and easily.
-                        You can adjust size of the banner, font-size, font-style, background-color,
-                        font-color and more importantly, the position of each added text element. 
-                        Combination of changing above aspects will offer you to express variety of creative designs.
-                        Check videos and explanations on instructions section for more clear idea.
+                    Dynamic Banner helps you to create awesome banners quickly and easily. 
+                    You can adjust the size of the banner, font-size, font-style, background colour, font colour as well as the position of each added text. 
+                    Playing with different combinations will allow to create a variety of fun designs for your banner. 
+                    Please check the ‘Instructions’ section to see how!
                     </div>
                 </AboutBlock>
                 <InstructionBlock menuTarget={menuTarget} openIntro={openIntro} methodSwitch={methodSwitch}>
@@ -394,10 +393,10 @@ const Menu = ({ menuOpen, btnClose, menuRef, menuTarget, onClickClose }) => {
                         </div>
                         <div className="explanation">
                             <div className="swtichC">
-                                Following video demonstrate how to create banner element. You need to press 'Add Text' button in order to be able to change the position of the banner element.
+                                The following video demonstrates how to start creating your banner. You need to press 'Add Text' button in order to be able to change the position of the banner element.
                             </div>
                             <div className="swtichL">
-                                Once you created the banner elements then you can change their position. Simply just press and drag each elements to your desirable position. Have fun being creative! 
+                                Once you have entered your text, you can change their position. Simply press the ‘Add Text’ button and drag each word to your desired place. Have fun being creative! 
                             </div>
                         </div>
                         <div className="videos">
@@ -410,7 +409,7 @@ const Menu = ({ menuOpen, btnClose, menuRef, menuTarget, onClickClose }) => {
                     <span className="contact" onClick={onClickContent}>contact</span>
                     <div className="contactContent">
                         <div className="contactWord">
-                            Please contact me through email or github link down below about any feature request, advice, questions on Dynamic Banner or even just to say 'Hi!', you are always welcome!
+                            Please contact me through email or the github link down below for any feature requests, advice, questions or even just to say hi! You are always welcome!
                         </div>
                         <div className="contactIcon">
                             <span>
