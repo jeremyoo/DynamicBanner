@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
+import styled, { css } from 'styled-components';
+import { SiGithub, SiGmail } from "react-icons/si";
 import exampleVideo1 from '../static/video/exampleVideo1.mp4'
 import exampleVideo2 from '../static/video/exampleVideo2.mp4'
-import styled, { css } from 'styled-components';
 
 const MenuBlock = styled.div`
     position: fixed;
@@ -34,35 +35,51 @@ const MenuContentBlock = styled.div`
     flex-direction: column;
     position: relative;
     pointer-events: all;
-    margin: 60px 20px 0;
+    margin: 60px 20px;
     span {
         cursor: pointer;
         text-transform: uppercase;
     }
     @media (max-width: 768px) {
-        margin: 50px 25px 0;
+        margin: 40px 25px 0;
     }
     @media (max-width: 414px) {
-        margin: 30px 30px 0;
+        margin: 25px 30px 0;
     }
 `;
 const AboutBlock = styled.div`
     width: 90%;
     margin: 10px 0;
     .aboutContent {
-        margin: 10px 5px;
+        margin: 15px 5px;
         font-size: var(--ft-md);
     }
+    div {
+        color: var(--white);
+        transform: translateY(5%);
+    }
     ${props => props.openAbout ? css`
+        span {
+            color: var(--teal);
+            text-shadow: var(--lightestest-navy) 2.5px 2.5px;
+        }
         div {
             transition: var(--transition);
+            transform: translateY(0);
             position: relative;
             opacity: 1;
             visibility: visible;
             pointer-events: all;
         }`: css`
+        span {
+            &:hover {
+                color: var(--bright-white);
+                text-shadow: var(--lightestest-navy) 2.5px 2.5px;
+            }
+        }
         div {
             position: fixed;
+            top: -50%;
             opacity: 0;
             visibility: hidden;
             pointer-events: none;
@@ -72,12 +89,17 @@ const AboutBlock = styled.div`
 const InstructionBlock = styled.div`
     width: 90%;
     margin: 10px 0;
+    @media (max-width: 414px) {
+        margin: 0;
+    }
     .instructionContent {
         margin: 10px 5px;
         font-size: var(--ft-md);
+        color: var(--white);
         .methods {
+            color: var(--lightestest-navy);
             font-size: var(--ft-xl);
-            margin: 10px 0;
+            margin-top: 10px;
             span {
                 text-transform: none;
                 padding: 0 10px;
@@ -89,7 +111,15 @@ const InstructionBlock = styled.div`
                 :nth-child(2) { &::before { content: "2. "}}
             }
         }
+        .explanation {
+            padding: 7.5px 0;
+            font-size: var(--ft-sm);
+        }
+        .videos {
+            margin: 10px 0;
+        }
         video {
+            background: var(--light-navy);
             width: 400px;
             @media (max-width: 768px) {
                 width: 350px;
@@ -99,15 +129,29 @@ const InstructionBlock = styled.div`
             }
         }
     }
+    .instructionContent {
+        transform: translateY(5%);
+    }
     ${props => props.openIntro ? css`
-        div {
-            transition: var(--transition);
-            position: relative;
-            opacity: 1;
-            visibility: visible;
-            pointer-events: all;
-        }`: css`
-        div {
+        .instructions {
+                color: var(--teal);
+                text-shadow: var(--lightestest-navy) 2.5px 2.5px;
+            }
+        .instructionContent {
+                transition: var(--transition);
+                transform: translateY(0);
+                position: relative;
+                opacity: 1;
+                visibility: visible;
+                pointer-events: all;
+            }`: css`
+        .instructions {
+            &:hover {
+                color: var(--bright-white);
+                text-shadow: var(--lightestest-navy) 2.5px 2.5px;
+            }
+        }
+        .instructionContent {
             position: fixed;
             opacity: 0;
             visibility: hidden;
@@ -115,6 +159,18 @@ const InstructionBlock = styled.div`
         }`
     }
     ${props => props.methodSwitch === "create" ? css`
+        .create {
+            color: var(--teal);
+            text-shadow: var(--lightestest-navy) 2px 2px;
+        }
+        .layout {
+            &:hover,
+            &:focus,
+            &:active {
+                color: var(--white);
+                text-shadow: var(--lightestest-navy) 2px 2px;
+            }
+        }
         .swtichC {
             transition: var(--transition);
             position: relative;
@@ -130,6 +186,18 @@ const InstructionBlock = styled.div`
         }`
     }
     ${props => props.methodSwitch === "layout" ? css`
+        .layout {
+            color: var(--teal);
+            text-shadow: var(--lightestest-navy) 2px 2px;
+        }
+        .create {
+            &:hover,
+            &:focus,
+            &:active {
+                color: var(--white);
+                text-shadow: var(--lightestest-navy) 2px 2px;
+            }
+        }
         .swtichL {
             transition: var(--transition);
             position: relative;
@@ -152,14 +220,50 @@ const ContactBlock = styled.div`
         margin: 10px 5px;
         font-size: var(--ft-md);
     }
+    .contactWord {
+        margin: 15px 0;
+    }
+    .contactIcon {
+        display: flex;
+        justify-content: flex-end;
+        margin: 0 10px;
+        span {
+            padding: 0 5px;
+        }
+    }
+    .githubIcon,
+    .gmailLogo {
+        &:hover,
+        &:focus,
+        &:active {
+            color: var(--bright-white);
+            animation: spin 0.5s;
+            animation-timing-function: var(--easing);
+        }
+    }
+    div {
+        color: var(--white);
+        transform: translateY(5%);
+    }
     ${props => props.openContact ? css`
+        span {
+            color: var(--teal);
+            text-shadow: var(--lightestest-navy) 2.5px 2.5px;
+        }
         div {
             transition: var(--transition);
+            transform: translateY(0);
             position: relative;
             opacity: 1;
             visibility: visible;
             pointer-events: all;
         }`: css`
+        span {
+            &:hover {
+                color: var(--bright-white);
+                text-shadow: var(--lightestest-navy) 2.5px 2.5px;
+            }
+        }
         div {
             position: fixed;
             opacity: 0;
@@ -175,6 +279,32 @@ const CloseButtonBlock = styled.div`
     ${props => !props.btnClose && css`
         display: none;
     `}
+    .closeSymbol {
+        position: absolute;
+        right: 0;
+        top: 0;
+        :before,
+        :after {
+            position: absolute;
+            content: "";
+            top: 1px;
+            right: 18px;
+            width: 1px;
+            height: 36px;
+            background: var(--teal);
+            @media (max-width: 414px) {
+                top: 0;
+                right: 16px;
+                height: 34px;
+            }
+        }
+        :before {
+            transform: rotate(45deg);
+        }
+        :after {
+            transform: rotate(-45deg);
+        }
+    }
     @media (min-width: 768px) {
         top: 20px;
         right: 40px;
@@ -262,32 +392,45 @@ const Menu = ({ menuOpen, btnClose, menuRef, menuTarget, onClickClose }) => {
                             <span className="create" onClick={onClickMethod}>Creating</span>
                             <span className="layout" onClick={onClickMethod}>Positioning</span>
                         </div>
-                        <div className="videos">
-                            <video className="swtichC" autoplay muted src={exampleVideo1}/>
-                            <video className="swtichL" autoplay muted src={exampleVideo2}/>
-                        </div>
                         <div className="explanation">
                             <div className="swtichC">
-                                create, create, create, create, create, create, create, create, create. create, create, create, create, create, create, create, create, create.
+                                Following video demonstrate how to create banner element. You need to press 'Add Text' button in order to be able to change the position of the banner element.
                             </div>
                             <div className="swtichL">
-                                layout, layout, layout, layout, layout, layout, layout, layout, layout. layout, layout, layout, layout, layout, layout, layout, layout, layout.
+                                Once you created the banner elements then you can change their position. Simply just press and drag each elements to your desirable position. Have fun being creative! 
                             </div>
+                        </div>
+                        <div className="videos">
+                            <video className="swtichC" controls autoplay muted src={exampleVideo1}/>
+                            <video className="swtichL" controls autoplay muted src={exampleVideo2}/>
                         </div>
                     </div>
                 </InstructionBlock>
                 <ContactBlock menuTarget={menuTarget} openContact={openContact}>
                     <span className="contact" onClick={onClickContent}>contact</span>
                     <div className="contactContent">
-                        <span>github page</span>
-                        <span>fortpolio website</span>
-                        <span><a href="mailto:jyyoo824@gmail.comm">jyyoo824@gmail.com</a></span>
+                        <div className="contactWord">
+                            Please contact me through email or github link down below about any feature request, advice, questions on Dynamic Banner or even just to say 'Hi!', you are always welcome!
+                        </div>
+                        <div className="contactIcon">
+                            <span>
+                                <a href="mailto:jyyoo824@gmail.comm">
+                                    <SiGmail className="gmailLogo" size="45px" />
+                                </a>
+                            </span>
+                            <span>
+                                <a href="https://github.com/jeremyoo/BannerCreator" target="blank">
+                                    <SiGithub className="githubIcon" size="45px" />    
+                                </a>
+                            </span>
+                        </div>
                     </div>
                 </ContactBlock>
             </MenuContentBlock>
         </MenuBlock>
         <CloseButtonBlock btnClose={btnClose} onClick={onClickClose}>
             <CloseButton>
+                <div className="closeSymbol" />
             </CloseButton>
         </CloseButtonBlock>
         </>

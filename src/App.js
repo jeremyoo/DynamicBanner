@@ -12,12 +12,13 @@ const StyledSectionContainer = styled.section`
 const App = () => {
   const inputRef = useRef();
   const buttonRef = useRef();
+  const scrollRef = useRef();
 
   return (
     <>
-    <Layout>
+    <Layout scrollRef={scrollRef}>
       <StyledMainContainer>
-        <StyledSectionContainer>
+        <StyledSectionContainer ref={scrollRef}>
             <CanvasContainer inputRef={inputRef} buttonRef={buttonRef} />
         </StyledSectionContainer>
       </StyledMainContainer>

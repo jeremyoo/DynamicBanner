@@ -14,6 +14,7 @@ const GlobalStyle = createGlobalStyle`
     --lightest-steel: #d0dbff;
     --white: #e4f0ff;
     --bright-white: #f7fbff;
+    --light-teal: #afffe4;
     --teal: #64FAC8;
     --dark-teal: #14cc8f;
     --darkest-teal: #12a171;
@@ -42,6 +43,16 @@ const GlobalStyle = createGlobalStyle`
 
   }
 
+  @font-face {
+    font-family: "BauhausC";
+    src: url("//db.onlinewebfonts.com/t/50a9a6f7cfe8fe4252b7278e8efa2376.eot");
+    src: url("//db.onlinewebfonts.com/t/50a9a6f7cfe8fe4252b7278e8efa2376.eot?#iefix") format("embedded-opentype"),
+    url("//db.onlinewebfonts.com/t/50a9a6f7cfe8fe4252b7278e8efa2376.woff2") format("woff2"),
+    url("//db.onlinewebfonts.com/t/50a9a6f7cfe8fe4252b7278e8efa2376.woff") format("woff"),
+    url("//db.onlinewebfonts.com/t/50a9a6f7cfe8fe4252b7278e8efa2376.ttf") format("truetype"),
+    url("//db.onlinewebfonts.com/t/50a9a6f7cfe8fe4252b7278e8efa2376.svg#BauhausC") format("svg");
+  }
+
   html {
     box-sizing: border-box;
     overflow-x: hidden;
@@ -65,7 +76,7 @@ const GlobalStyle = createGlobalStyle`
     min-height: 100%;
     background-color: var(--navy);
     color: var(--steel);
-    font-family: sans-serif;
+    font-family: Sans-Serif;
     font-size: var(--ft-xl);
     line-height: 1.3;
 
@@ -136,6 +147,26 @@ const GlobalStyle = createGlobalStyle`
     display: inline-block;
     border: 0;
     outline: 0;
+  }
+
+  @keyframes spin {
+    0% {
+        transform: rotate(360deg);
+    }
+    100% {
+        transform: rotate(0);
+    }
+  }
+  @keyframes jump {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20%);
+    }
+    100% {
+        transform: translateY(0);
+    }
   }
 `;
 

@@ -37,18 +37,32 @@ const StyledNav = styled.nav`
     ${({ theme }) => theme.mixins.flexCenter};
     a {
       ${({ theme }) => theme.mixins.flexCenter};
-      font-size: var(--ft-sm-heading);
+      font-size: var(--ft-heading);
+      font-family: BauhausC;
       color: var(--teal);
-      &:hover,
-      &:focus {
-        color: var(--lightest-steel);
-      }
       span {
         padding: 0 15px;
-        text-transform: uppercase;
+      }
+      &:hover,
+      &:focus,
+      &:active {
+        color: var(--white);
+        .brushIcon {
+          animation: spin 0.5s;
+          animation-timing-function: var(--easing);
+        }
+        span {
+          animation: jump 0.25s;
+          animation-timing-function: var(--easing);
+        }
+        @media (max-width: 414px) {
+        span {
+          animation: none;
+          }
+        }
       }
       @media (max-width: 768px) {
-        font-size: var(--ft-xxl);
+        font-size: var(--ft-sm-heading);
         .brushIcon {
           width: 30px;
           height: 30px;
@@ -58,7 +72,7 @@ const StyledNav = styled.nav`
         }
       }
       @media (max-width: 414px) {
-        font-size: var(--ft-xl);
+        font-size: var(--ft-xxl);
         .brushIcon {
           width: 25px;
           height: 25px;
@@ -83,11 +97,28 @@ const StyledLinks = styled.div`
     list-style: none;
     margin: 0;
     padding: 0;
+    .about {
+      width: 50px;
+    }
+    .instructions {
+      width: 104px;
+    }
+    .contact {
+      width: 66px;
+    }
     li {
       cursor: pointer;
       font-size: var(--ft-sm);
       text-transform: uppercase;
-      padding: 10px 15px;
+      margin: 10px 10px;
+      &:hover,
+      &:focus,
+      &:active {
+        font-weight: 600;
+        color: var(--white);
+        animation: jump 0.25s;
+        animation-timing-function: var(--easing);
+      }
     }
   }
 `;
@@ -107,9 +138,10 @@ const MenuButton = styled.div`
     width: 35px;
     height: 35px;
   }
-  @media (max-width: 320px) {
-    width: 30px;
-    height: 30px;
+  &:hover,
+  &:focus,
+  &:active {
+    background: var(--teal-tint);
   }
   ${props => props.btnOpen && css`
     display: none;
@@ -169,7 +201,9 @@ const Nav = () => {
 
   useEffect(() => {
     if (menuOpen) setTimeout(() => {setBtnOpen(true);}, 250); 
-    if (menuOpen) setTimeout(() => {setBtnClose(true);}, 250); 
+    if (menuOpen) setTimeout(() => {setBtnClose(true);}, 250);
+    if (menuOpen) window.document.body.style.position = "fixed";
+    if (!menuOpen) window.document.body.style.position = "relative";
   }, [menuOpen]);
 
   const menuRef = useRef();
@@ -187,7 +221,7 @@ const Nav = () => {
           <div className="logo">
             <a href="/">
               <FaPaintBrush className="brushIcon" size="35px" />
-              <span>dynamic banner</span>
+              <span>Dynamic Banner</span>
             </a>
           </div>
           <StyledLinks>

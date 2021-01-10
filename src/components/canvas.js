@@ -33,8 +33,6 @@ const Canvas = ({
   textHex,
   inputRef,
   initialize,
-  resetI,
-  resetC,
 }) => {
   const [textElement, setTextElement] = useState([]);
   const canvasRef = useRef();
@@ -70,9 +68,7 @@ const Canvas = ({
   }
 
   const onClickReset = () => {
-    setTextElement([]);
-    resetI();
-    resetC();
+    window.location.reload();
   }
 
   return (
