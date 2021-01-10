@@ -367,7 +367,6 @@ const Menu = ({ menuOpen, btnClose, menuRef, menuTarget, onClickClose }) => {
     }
 
     const onClickMethod = (e) => {
-        console.log(e.target.className);
         setMethodSwitch(e.target.className);
     };
 
@@ -378,10 +377,10 @@ const Menu = ({ menuOpen, btnClose, menuRef, menuTarget, onClickClose }) => {
                 <AboutBlock menuTarget={menuTarget} openAbout={openAbout}>
                     <span className="about" onClick={onClickContent}>about</span>
                     <div className="aboutContent">
-                    Dynamic Banner helps you to create awesome banners quickly and easily. 
-                    You can adjust the size of the banner, font-size, font-style, background colour, font colour as well as the position of each added text. 
-                    Playing with different combinations will allow to create a variety of fun designs for your banner. 
-                    Please check the ‘Instructions’ section to see how!
+                        Dynamic Banner helps you to create awesome banners quickly and easily. 
+                        You can adjust the size of the banner, font-size, font-style, background colour, font colour as well as the position of each added text. 
+                        Playing with different combinations will allow to create a variety of fun designs for your banner. 
+                        Please check the ‘Instructions’ section to see how!
                     </div>
                 </AboutBlock>
                 <InstructionBlock menuTarget={menuTarget} openIntro={openIntro} methodSwitch={methodSwitch}>
