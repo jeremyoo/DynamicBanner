@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.js": "/DynamicBanner/static/js/main.edc8e018.chunk.js",
-    "main.js.map": "/DynamicBanner/static/js/main.edc8e018.chunk.js.map",
+    "main.js": "/DynamicBanner/static/js/main.0d4aa052.chunk.js",
+    "main.js.map": "/DynamicBanner/static/js/main.0d4aa052.chunk.js.map",
     "runtime-main.js": "/DynamicBanner/static/js/runtime-main.c1300e82.js",
     "runtime-main.js.map": "/DynamicBanner/static/js/runtime-main.c1300e82.js.map",
-    "static/js/2.eb0ab1a0.chunk.js": "/DynamicBanner/static/js/2.eb0ab1a0.chunk.js",
-    "static/js/2.eb0ab1a0.chunk.js.map": "/DynamicBanner/static/js/2.eb0ab1a0.chunk.js.map",
+    "static/js/2.2bd79e48.chunk.js": "/DynamicBanner/static/js/2.2bd79e48.chunk.js",
+    "static/js/2.2bd79e48.chunk.js.map": "/DynamicBanner/static/js/2.2bd79e48.chunk.js.map",
     "index.html": "/DynamicBanner/index.html",
-    "static/js/2.eb0ab1a0.chunk.js.LICENSE.txt": "/DynamicBanner/static/js/2.eb0ab1a0.chunk.js.LICENSE.txt",
+    "static/js/2.2bd79e48.chunk.js.LICENSE.txt": "/DynamicBanner/static/js/2.2bd79e48.chunk.js.LICENSE.txt",
     "static/media/exampleVideo1.03f12c0c.mp4": "/DynamicBanner/static/media/exampleVideo1.03f12c0c.mp4",
     "static/media/exampleVideo2.df15ca3d.mp4": "/DynamicBanner/static/media/exampleVideo2.df15ca3d.mp4"
   },
   "entrypoints": [
     "static/js/runtime-main.c1300e82.js",
-    "static/js/2.eb0ab1a0.chunk.js",
-    "static/js/main.edc8e018.chunk.js"
+    "static/js/2.2bd79e48.chunk.js",
+    "static/js/main.0d4aa052.chunk.js"
   ]
 }
