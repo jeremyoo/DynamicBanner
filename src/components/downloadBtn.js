@@ -39,7 +39,7 @@ const DownloadButton = ({ textElement, canvasWidth, onClick }) => {
   return (
     <>
       <DownloadBtnBlock textElement={textElement}>
-        <button style={{width: parseInt(canvasWidth/2)}} onClick={onClick}>DOWNLOAD THIS BANNER</button>
+        <button style={{width: parseInt(canvasWidth/2)}} onClick={onClick}>DOWNLOAD BANNER</button>
       </DownloadBtnBlock>
     </>
   );

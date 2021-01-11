@@ -1,5 +1,6 @@
 import React, { useRef } from "react";
 import styled from 'styled-components';
+import { Helmet } from 'react-helmet-async'
 import Layout from "./components/layout";
 import CanvasContainer from "./containers/CanvasContainer";
 
@@ -16,6 +17,9 @@ const App = () => {
 
   return (
     <>
+    <Helmet>
+      <title> DYNAMIC BANNER. </title>
+    </Helmet>
     <Layout scrollRef={scrollRef}>
       <StyledMainContainer>
         <StyledSectionContainer ref={scrollRef}>

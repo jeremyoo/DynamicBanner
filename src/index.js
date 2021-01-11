@@ -4,6 +4,7 @@ import App from './App';
 
 import { createStore }  from 'redux';
 import { Provider } from 'react-redux';
+import { HelmetProvider } from 'react-helmet-async'
 import rootReducer from './reducers';
 import { composeWithDevTools } from 'redux-devtools-extension'
 
@@ -15,7 +16,9 @@ const store = createStore(
 
 ReactDOM.render(
   <Provider store={store}>
-    <App />
+    <HelmetProvider>
+      <App />
+    </HelmetProvider>
   </Provider>,
   document.getElementById('root')
 );
