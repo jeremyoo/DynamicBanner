@@ -9,8 +9,7 @@ Dynamic Banner allows you to create banners with various design quickly and easi
 </div>
 
 
-![example1.gif](./src/static/example1.gif)
-![example2.gif](./src/static/example2.gif)
+![example1.gif](./src/static/example1.gif) ![example2.gif](./src/static/example2.gif)
 
 ## Features
 - Create text element on canvas and download it as PNG image.
