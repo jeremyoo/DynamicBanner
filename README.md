@@ -12,7 +12,7 @@ Dynamic Banner allows you to create banners with various design quickly and easi
 
 | | | |
 |:-------------------------:|:-------------------------:|:-------------------------:|
-|<img width="1604" src=./src/static/banner/example_1.png"> | <img width="1604" src=./src/static/banner/example_2.png">|<img width="1604" src=./src/static/banner/example_3.png">|
+|<img width="300" src="./src/static/banner/example_1.png"> | <img width="300" src="./src/static/banner/example_2.png">|<img width="300" src="./src/static/banner/example_3.png">|
 
 </div>
 
