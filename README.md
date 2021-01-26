@@ -10,12 +10,7 @@ Dynamic Banner allows you to create banners with various design quickly and easi
 
 <img src = "./src/static/example2.gif" width ="450" /> <img src = "./src/static/example1.gif" width ="450" />
 
-| | | |
-|:-------------------------:|:-------------------------:|:-------------------------:|
-|<img width="300" src="./src/static/banner/example_1.png"> | <img width="300" src="./src/static/banner/example_2.png">|<img width="300" src="./src/static/banner/example_3.png">|
-
 </div>
-
 
 ## Features
 - Create text element on canvas and download it as PNG image.
@@ -24,6 +19,13 @@ Dynamic Banner allows you to create banners with various design quickly and easi
     - font & canvas size
     - font & canvas color
     - position of text element
+
+## Exmaples
+<div align="center">
+| | | |
+|:-------------------------:|:-------------------------:|:-------------------------:|
+|<img width="300" src="./src/static/banner/example_1.png"> | <img width="300" src="./src/static/banner/example_2.png">|<img width="300" src="./src/static/banner/example_3.png">|
+</div>
 
 ## Issue
 Please submit any issue through following link [[Dynamic Banner Issue]](https://github.com/jeremyoo/DynamicBanner/issues).
