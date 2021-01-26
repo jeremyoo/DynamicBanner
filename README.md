@@ -12,6 +12,7 @@ Dynamic Banner allows you to create banners with various design quickly and easi
 
 </div>
 
+
 ## Features
 - Create text element on canvas and download it as PNG image.
 - Available design options:
