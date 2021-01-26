@@ -8,7 +8,7 @@ Dynamic Banner allows you to create banners with various design quickly and easi
 [[Go to Dynamic Banner]](https://jeremyoo.github.io/DynamicBanner/)
 
 
-<img src = "./src/static/example2.gif" width ="300" /> <img src = "./src/static/example1.gif" width ="300" />
+<img src = "./src/static/example2.gif" width ="450" /> <img src = "./src/static/example1.gif" width ="450" />
 
 | | | |
 |:-------------------------:|:-------------------------:|:-------------------------:|
