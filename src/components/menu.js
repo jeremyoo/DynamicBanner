@@ -399,8 +399,8 @@ const Menu = ({ menuOpen, btnClose, menuRef, menuTarget, onClickClose }) => {
                             </div>
                         </div>
                         <div className="videos">
-                            <video className="swtichC" controls autoplay muted src={exampleVideo1}/>
-                            <video className="swtichL" controls autoplay muted src={exampleVideo2}/>
+                            <video className="swtichC" controls muted src={exampleVideo1}/>
+                            <video className="swtichL" controls muted src={exampleVideo2}/>
                         </div>
                     </div>
                 </InstructionBlock>

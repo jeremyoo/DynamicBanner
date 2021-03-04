@@ -120,11 +120,11 @@ const SizeInput = ({ onChangeField, width, height }) => {
         <StyledBlock>
             <span>
                 <input id="width" type="number" value={valueChange ? width : ""}  max={deviceWidth} placeholder={width} onChange={onChange} name="canvasWidth"/>
-                <label for="width">width</label>
+                <label htmlFor="width">width</label>
             </span>
             <span>
                 <input id="height" type="number" placeholder={height} onChange={onChange} name="canvasHeight"/>
-                <label for="height">height</label>
+                <label htmlFor="height">height</label>
             </span>
         </StyledBlock>
     )

@@ -191,7 +191,7 @@ const FontInput = ({ onChangeField }) => {
                 <Options
                     open={openSize}
                 >
-                    {fontSize.map((size) => <Option data-value={size} data-type="fontSize" onClick={onClickSizeValue}>{size}</Option>)}
+                    {fontSize.map((size) => <Option key={size} data-value={size} data-type="fontSize" onClick={onClickSizeValue}>{size}</Option>)}
                 </Options>
             </Select>
             <Select onClick={StyleVisible} ref={StyleRef}>
@@ -199,7 +199,7 @@ const FontInput = ({ onChangeField }) => {
                     <Arrow open={openStyle}></Arrow>
                 </SelectTrigger>
                 <Options open={openStyle}>
-                    {fontStyle.map((style) => <Option data-value={style} data-type="fontStyle" onClick={onClickStyleValue}>{style}</Option>)}
+                    {fontStyle.map((style) => <Option key={style} data-value={style} data-type="fontStyle" onClick={onClickStyleValue}>{style}</Option>)}
                 </Options>
             </Select>
         </StyledBlock>

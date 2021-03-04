@@ -76,13 +76,13 @@ const Canvas = ({
       <CanvasBlock>
         <SizeInputContainer />
         <canvas ref={canvasRef} width={canvasWidth} height={canvasHeight} />
-        <div class="reset_downlaod_div">
+        <div className="reset_downlaod_div">
           <ResetButton textElement={textElement} canvasWidth={canvasWidth} onClick={onClickReset} />
           <DownloadButton textElement={textElement} canvasWidth={canvasWidth} onClick={onClickDonwload} />
         </div>
         <PaletteIconContainer />
         <TextInputContainer inputRef={inputRef} />
-        <div class="font_addbtn_div">
+        <div className="font_addbtn_div">
           <FontInputContainer />
           <AddBtn onClick={onClickAddText} />
         </div>

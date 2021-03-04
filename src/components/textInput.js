@@ -68,7 +68,7 @@ const TextInput = ({ onChangeField, inputRef }) => {
                  onChange={onChange}
                  name="text"
                  ref={inputRef}
-                 autocomplete="off" 
+                 autoComplete="off" 
                 />
                 <div className="underline" />
             </span>

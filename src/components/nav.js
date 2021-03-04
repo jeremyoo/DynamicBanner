@@ -228,7 +228,7 @@ const Nav = () => {
             <ul>
               <li className="about" onClick={onClickMenu} >about</li>
               <li className="instructions" onClick={onClickMenu} >instructions</li>
-              <li className="contact" onClick={onClickMenu} >contact</li>
+              <li className="contact" onClick={onClickMenu}  >contact</li>
             </ul>
           </StyledLinks>
           <MenuButton btnOpen={btnOpen} onClick={onClickMenu}>
