@@ -84,7 +84,12 @@ export const canvasMousemove = (canvas, backgroundHex, fontSize, fontStyle, text
             });
             textCtx.font = `${fontSize}px ${fontStyle}`;
             textCtx.fillStyle = `${textHex}`;
-            textCtx.fillText(`${text}`, `${canvasWidth / 2}`, `${canvasHeight / 2}`);
+            const measureText = textCtx.measureText(text);
+            const textWidth = Math.floor(measureText.width);
+            const textHeight = parseInt(fontSize)
+            const x = (canvas.width / 2) - (textWidth / 2);
+            const y = (canvas.height / 2) - (textHeight / 2);
+            textCtx.fillText(`${text}`, `${x}`, `${y}`);
           }
         });
     };
