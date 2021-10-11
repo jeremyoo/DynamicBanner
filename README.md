@@ -27,6 +27,14 @@ Dynamic Banner allows you to create banners with various design quickly and easi
     <img width="300" src="./src/static/banner/example_2.png">
 </div>
 
+## Technology
+- Node.js
+- React.js
+- Redux
+- MongoDB
+- HTML Canvas
+- Styled-components
+
 ## Issue
 Please submit any issue through following link [[Dynamic Banner Issue]](https://github.com/jeremyoo/DynamicBanner/issues).
 
